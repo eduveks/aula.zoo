@@ -1,9 +1,13 @@
 package br.com.letscode.zoo.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 
 @Entity
 @Table(name="category")
@@ -17,4 +21,7 @@ public class Category {
     private String uid;
 
     private String name;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "category")
+    private Collection<Animal> animals = new ArrayList<>();
 }

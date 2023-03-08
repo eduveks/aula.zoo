@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class AnimalDTO {
-
     private String uid;
     private String name;
     private int age;
+    private CategoryDTO category;
 }

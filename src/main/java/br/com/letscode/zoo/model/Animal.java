@@ -1,9 +1,12 @@
 package br.com.letscode.zoo.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table(name="animal")
@@ -19,4 +22,7 @@ public class Animal {
     private String name;
 
     private int age;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Category category;
 }

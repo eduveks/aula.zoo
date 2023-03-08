@@ -14,17 +14,17 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/animal")
+@RequestMapping("/animal-component")
 @AllArgsConstructor
-public class AnimalController {
+public class AnimalComponentController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(AnimalController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(AnimalComponentController.class);
 
     private static List<AnimalDTO> dbList = Collections.synchronizedList(
             new ArrayList() {{
-                    add(new AnimalDTO(UUID.randomUUID().toString(), "Gato", 10));
-                    add(new AnimalDTO(UUID.randomUUID().toString(), "Cachorro", 20));
-                    add(new AnimalDTO(UUID.randomUUID().toString(), "Elefante", 30));
+                    add(new AnimalDTO(UUID.randomUUID().toString(), "Gato", 10, null));
+                    add(new AnimalDTO(UUID.randomUUID().toString(), "Cachorro", 20, null));
+                    add(new AnimalDTO(UUID.randomUUID().toString(), "Elefante", 30, null));
             }}
     );
 
