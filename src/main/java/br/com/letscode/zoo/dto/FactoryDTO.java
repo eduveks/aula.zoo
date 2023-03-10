@@ -17,6 +17,8 @@ public class FactoryDTO {
                 animal.getUid(),
                 animal.getName(),
                 animal.getAge(),
+                null,
+                null,
                 entityToDTO(animal.getCategory())
         );
     }

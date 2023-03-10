@@ -22,9 +22,9 @@ public class AnimalComponentController {
 
     private static List<AnimalDTO> dbList = Collections.synchronizedList(
             new ArrayList() {{
-                    add(new AnimalDTO(UUID.randomUUID().toString(), "Gato", 10, null));
-                    add(new AnimalDTO(UUID.randomUUID().toString(), "Cachorro", 20, null));
-                    add(new AnimalDTO(UUID.randomUUID().toString(), "Elefante", 30, null));
+                    add(new AnimalDTO(UUID.randomUUID().toString(), "Gato", 10, null, null, null));
+                    add(new AnimalDTO(UUID.randomUUID().toString(), "Cachorro", 20, null, null, null));
+                    add(new AnimalDTO(UUID.randomUUID().toString(), "Elefante", 30, null, null, null));
             }}
     );
 

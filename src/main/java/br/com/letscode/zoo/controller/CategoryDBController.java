@@ -4,6 +4,9 @@ import br.com.letscode.zoo.dto.CategoryDTO;
 import br.com.letscode.zoo.dto.FactoryDTO;
 import br.com.letscode.zoo.exception.NotFoundException;
 import br.com.letscode.zoo.service.CategoryService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +26,13 @@ public class CategoryDBController {
     private static final Logger LOGGER = LoggerFactory.getLogger(CategoryDBController.class);
     private CategoryService categoryService;
 
+    @Operation(summary = "Lista todas das categorias da base de dados.")
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Dados de todas as categorias encontradas."
+            )
+    })
     @GetMapping("/list")
     public List<CategoryDTO> list() {
         return categoryService.all().stream()
